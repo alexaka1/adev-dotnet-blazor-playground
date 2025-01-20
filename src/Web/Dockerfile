@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 
-FROM --platform=$BUILDPLATFORM node:22-alpine@sha256:b09589de497084c656bb7f05078860793d1dffc019bfd1d733cdc1404bff3d1e AS tailwindcss
+FROM --platform=$BUILDPLATFORM node:22-alpine@sha256:f2dc6eea95f787e25f173ba9904c9d0647ab2506178c7b5b7c5a3d02bc4af145 AS tailwindcss
 RUN corepack enable
 WORKDIR /src
 COPY ["package.json", "pnpm-lock.yaml", "./"]
