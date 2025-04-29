@@ -1,4 +1,4 @@
-﻿FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/aspnet:9.0-noble-chiseled@sha256:d24db805712b6bc67f4f18a50d3659fc9f8014dde1b36494c98f0159f6d1542f AS base
+﻿FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/aspnet:9.0-noble-chiseled@sha256:9d93791b3a585850b4f3455d165b8e05ec9fb262e21efad5f334d7ad4f55b84d AS base
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
@@ -12,7 +12,7 @@ ENV NODE_ENV=production
 COPY . .
 RUN pnpm run tailwind:build:minify
 
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0@sha256:6894a71619e08b47ef9df7ff1f436b21d21db160e5d864e180c294a53d7a12f2 AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0@sha256:fe3c1ed472bb0964c100f06aa9b1759f5ed84e0dfe6904d60f6a82159d3c7ae4 AS build
 ARG BUILD_CONFIGURATION=Release
 ARG TARGETARCH
 RUN apt update; \
