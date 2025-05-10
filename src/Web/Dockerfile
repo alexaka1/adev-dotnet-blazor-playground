@@ -12,7 +12,7 @@ ENV NODE_ENV=production
 COPY . .
 RUN pnpm run tailwind:build:minify
 
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0@sha256:6894a71619e08b47ef9df7ff1f436b21d21db160e5d864e180c294a53d7a12f2 AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0@sha256:9b0a4330cb3dac23ebd6df76ab4211ec5903907ad2c1ccde16a010bf25f8dfde AS build
 ARG BUILD_CONFIGURATION=Release
 ARG TARGETARCH
 RUN apt update; \
